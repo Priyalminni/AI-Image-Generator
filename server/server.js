@@ -7,12 +7,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//app.listen(4000);
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, function(){
+  console.log("My Server is running on PORT : " + PORT);
+});
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);//instance where we can send request 
+
+
 
 const generateImage = async (prompt) => {
   const response = await openai.createImage({
@@ -32,3 +38,8 @@ app.post("/generateImage", async (req, res) => {
   const images = await generateImage(req.body.prompt);
   res.send({ images });
 });
+
+
+app.get("/api/welcome"), async (req, res) =>{
+  res.status(200).send({"message":"Hello world !!!"});
+}

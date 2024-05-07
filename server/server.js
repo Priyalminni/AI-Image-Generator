@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.listen(4000);
+//app.listen(4000);
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,

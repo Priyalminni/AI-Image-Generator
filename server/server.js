@@ -40,6 +40,6 @@ app.post("/generateImage", async (req, res) => {
 });
 
 
-app.get("/api/welcome"), async (req, res) =>{
+app.get("/api/welcome", async (req, res) =>{
   res.status(200).send({"message":"Hello world !!!"});
-}
+});

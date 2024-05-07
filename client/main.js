@@ -18,7 +18,7 @@ const genImage = async () => {
       generatedImage2.src = "images/generating.png";
       generatedImage3.src = "images/generating.png";
 
-      const response = await fetch("https://ai-image-generator-m3ww.onrender.com", {
+      const response = await fetch("https://ai-image-generator-m3ww.onrender.com/generateImage", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
